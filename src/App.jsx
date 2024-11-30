@@ -63,6 +63,7 @@ import NewCollection from "./components/NewCollection";
 import BookDetails from "./components/BookDetails";
 import MyCollection from "./components/MyCollections";
 import Archive from "./components/Archive"; // Import the new Archive page
+import Search from "./components/Search";
 
 import logo from "./components/logo.png";
 import "./App.css";
@@ -89,6 +90,11 @@ const App = () => {
 
   const removeFromArchive = (key) => {
     setArchive(archive.filter((book) => book.key !== key));
+  };
+
+  const handleSelectBook = (book) => {
+    // Here you can navigate to the BookDetails page or perform any action
+    console.log("Selected book:", book);
   };
 
   return (
@@ -122,6 +128,10 @@ const App = () => {
             element={
               <Archive archive={archive} removeFromArchive={removeFromArchive} />
             }
+          />
+          <Route
+              path="/search"
+              element={<Search onSelectBook={handleSelectBook} />}
           />
           <Route path="/book-details" element={<BookDetails />} />
         </Routes>
