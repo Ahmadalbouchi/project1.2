@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
-import logo from "./logo.png"; // Use the correct path to your logo file.
+import logo from "./logo.png"; // Ensure the path is correct.
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <img src={logo} alt="Logo" />
+      <img src={logo} alt="Logo" className="app-logo" />
       <div className="login-card">
         <h1>Login / Sign-Up</h1>
         <div className="login-form">
@@ -33,7 +33,7 @@ const Login = () => {
             Don’t have an account?{" "}
             <span
               className="signup-link"
-              onClick={() => navigate("./SignUp")}
+              onClick={() => navigate("./signup")}
             >
               Sign Up
             </span>

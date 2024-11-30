@@ -1,18 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+import logo from "./logo.png"; // Ensure the path is correct.
 
 const SignUp = () => {
   const navigate = useNavigate();
 
   const handleSignUp = () => {
-    // Add sign-up logic here (e.g., API integration)
     alert("Account created successfully!");
     navigate("/");
   };
 
   return (
     <div className="login-container">
+      <img src={logo} alt="Logo" className="app-logo" />
       <div className="login-card">
         <h1>Sign Up</h1>
         <div className="login-form">
