@@ -1,11 +1,11 @@
 import React from "react";
 
-const DownloadedBooks = ({ archive, removeFromArchive }) => {
+const Archive = ({ archive, removeFromArchive }) => {
   return (
     <div className="container">
-      <h1>Downloaded Books</h1>
+      <h1>Archive</h1>
       {archive.length === 0 ? (
-        <p>No books downloaded yet!</p>
+        <p>No books added to the archive yet!</p>
       ) : (
         <div className="grid-container">
           {archive.map((book) => (
@@ -19,7 +19,7 @@ const DownloadedBooks = ({ archive, removeFromArchive }) => {
                 className="favorite-button"
                 onClick={() => removeFromArchive(book.key)}
               >
-                Remove from Downloaded Books
+                Remove from Archive
               </button>
             </div>
           ))}
@@ -29,4 +29,4 @@ const DownloadedBooks = ({ archive, removeFromArchive }) => {
   );
 };
 
-export default DownloadedBooks;
+export default Archive;
