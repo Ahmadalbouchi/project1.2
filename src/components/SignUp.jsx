@@ -8,7 +8,7 @@ const SignUp = () => {
 
   const handleSignUp = () => {
     alert("Account created successfully!");
-    navigate("/");
+    navigate("/home"); // Redirect after account creation
   };
 
   return (
@@ -44,7 +44,7 @@ const SignUp = () => {
             Already have an account?{" "}
             <span
               className="signup-link"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/")} // Redirect to login
             >
               Login
             </span>
