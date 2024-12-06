@@ -6,10 +6,9 @@ import Home from "./components/Home";
 import NewCollection from "./components/NewCollection";
 import BookDetails from "./components/BookDetails";
 import MyCollection from "./components/MyCollections";
-import Archive from "./components/Archive";
-import DownloadedBooks from "./components/DownloadedBooks"; // Import DownloadedBooks page
+import Archive from "./components/Archive"; // Import the new Archive page
 
-import logo from "./components/logo.png"; 
+import logo from "./components/logo.png";
 import "./App.css";
 
 const App = () => {
@@ -43,10 +42,6 @@ const App = () => {
     setArchive(archive.filter((book) => book.key !== key));
   };
 
-  const removeFromDownloadedBooks = (key) => {
-    setDownloadedBooks(downloadedBooks.filter((book) => book.key !== key));
-  };
-
   return (
     <Router>
       <div className="app">
@@ -77,15 +72,6 @@ const App = () => {
             path="/archive"
             element={
               <Archive archive={archive} removeFromArchive={removeFromArchive} />
-            }
-          />
-          <Route
-            path="/downloaded-books"
-            element={
-              <DownloadedBooks
-                downloadedBooks={downloadedBooks}
-                removeFromDownloadedBooks={removeFromDownloadedBooks}
-              />
             }
           />
           <Route path="/book-details" element={<BookDetails />} />

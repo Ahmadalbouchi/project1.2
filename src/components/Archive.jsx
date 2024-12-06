@@ -22,7 +22,7 @@ const Archive = ({ archive, removeFromArchive }) => {
                 className="favorite-button"
                 onClick={() => removeFromArchive(book.key)}
               >
-                Remove from Archive
+                 from Archive
               </button>
             </div>
           ))}
