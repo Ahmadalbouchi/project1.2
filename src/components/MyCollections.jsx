@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const MyCollection = ({ favorites, removeFromFavorites }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="container">
       <h1>My Collection</h1>
@@ -25,6 +28,11 @@ const MyCollection = ({ favorites, removeFromFavorites }) => {
           ))}
         </div>
       )}
+
+      {/* Go to Home Button */}
+      <button onClick={() => navigate("/home")} className="go-home-button">
+        Go to Home
+      </button>
     </div>
   );
 };

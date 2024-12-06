@@ -1,14 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const DownloadedBooks = ({ archive, removeFromArchive }) => {
+const DownloadedBooks = ({ downloadedBooks, removeFromDownloadedBooks }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="container">
       <h1>Downloaded Books</h1>
-      {archive.length === 0 ? (
+      {downloadedBooks.length === 0 ? (
         <p>No books downloaded yet!</p>
       ) : (
         <div className="grid-container">
-          {archive.map((book) => (
+          {downloadedBooks.map((book) => (
             <div key={book.key} className="card">
               <img
                 src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
@@ -17,7 +20,7 @@ const DownloadedBooks = ({ archive, removeFromArchive }) => {
               <h3>{book.title}</h3>
               <button
                 className="favorite-button"
-                onClick={() => removeFromArchive(book.key)}
+                onClick={() => removeFromDownloadedBooks(book.key)}
               >
                 Remove from Downloaded Books
               </button>
@@ -25,6 +28,11 @@ const DownloadedBooks = ({ archive, removeFromArchive }) => {
           ))}
         </div>
       )}
+
+      {/* Go to Home Button */}
+      <button onClick={() => navigate("/home")} className="go-home-button">
+        Go to Home
+      </button>
     </div>
   );
 };

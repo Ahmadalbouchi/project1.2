@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Archive = ({ archive, removeFromArchive }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="container">
       <h1>Archive</h1>
@@ -25,6 +28,11 @@ const Archive = ({ archive, removeFromArchive }) => {
           ))}
         </div>
       )}
+
+      {/* Go to Home Button */}
+      <button onClick={() => navigate("/home")} className="go-home-button">
+        Go to Home
+      </button>
     </div>
   );
 };

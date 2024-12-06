@@ -1,321 +1,310 @@
-/* General Styles */
+:root {
+    /* Color Palette */
+    --primary-color: #6a1b9a;
+    --secondary-color: #3949ab;
+    --background-color: #f0f4f8;
+    --text-color: #333;
+    --accent-color: #3c2e41;
+    --white: #ffffff;
+    /* Typography */
+    --base-font: 'Inter', 'Arial', sans-serif;
+    /* Shadows and Effects */
+    --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
+
+/* Reset and Base Styles */
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--base-font);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    color: var(--text-color);
+    background: url('https://i.pinimg.com/736x/b9/b7/65/b9b76551dc5e1e5633f5b9579d90ef4c.jpg') center/cover fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #333;
-}
-
-h1 {
-    color: #5c6bc0;
-    /* Soft purple for headings */
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1rem;
     text-align: center;
-}
-
-button {
-    background-color: #5c6bc0;
-    /* Soft purple */
-    color: white;
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #3949ab;
-    /* Slightly darker purple on hover */
-}
-
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-
-/* Logo Styles */
-
-.app-logo {
-    width: 100px;
-    /* Adjust logo size */
-    height: auto;
-    display: block;
-    margin: 0 auto 20px;
-    /* Centered with space below */
 }
 
 
 /* Container Styles */
 
 .container {
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow-medium);
     text-align: center;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 1200px;
+    margin-top: 5rem;
 }
 
 
-/* Card Styles */
+/* Logo Styles */
 
-.card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.card img {
-    border-radius: 8px;
-    max-width: 100%;
-    height: auto;
-    cursor: pointer;
-}
-
-.card h3 {
-    color: #5c6bc0;
-    font-size: 1.5rem;
-    margin-top: 10px;
-}
-
-.card p {
-    font-size: 1rem;
-    color: #666;
-    margin: 10px 0;
-}
-
-.grid-container {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    margin-top: 2rem;
-}
-
-
-/* Favorite Button */
-
-.favorite-button {
-    background-color: #fccccc;
-    /* Soft red for favorite */
-    color: white;
-    padding: 0.5rem 1.2rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.favorite-button:hover {
-    background-color: #d32f2f;
-    /* Darker red on hover */
-}
-
-
-/* My Collection Button */
-
-.my-collection-button {
+.app-logo {
     display: block;
-    margin: 20px auto;
-    padding: 0.8rem 2rem;
-    background-color: #5c6bc0;
-    color: white;
-    font-size: 1.1rem;
+    margin: 0 auto 1rem;
+    max-width: 200px;
+    height: auto;
+}
+
+
+/* Title Styles */
+
+h1 {
+    color: var(--accent-color);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-shadow: 1px 1px 2px #be15a433;
+}
+
+
+/* Button Styles */
+
+button,
+.btn {
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    font-size: 0.9rem;
+    /* Smaller font size */
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    /* Reduced padding */
     border: none;
     border-radius: 8px;
+    /* Smaller border radius */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 140px;
+    /* Ensures a minimum width for consistency */
 }
 
-.my-collection-button:hover {
-    background-color: #3949ab;
-}
 
+/* Adjusting button container for vertical alignment */
 
-/* Login/Sign-Up Page Styles */
-
-.login-container {
+.button-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* Stacks the buttons vertically */
     align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
-    /* Light gray background */
+    gap: 1.5rem;
+    /* Adds space between each button */
+    margin-top: 30px;
 }
 
-.login-card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
+
+/* Book List Styles */
+
+.book-list-container {
+    margin-top: 100px;
+}
+
+
+/* Input Styles */
+
+input[type="text"],
+input[type="password"],
+input[type="Email"] {
+    width: 100%;
     max-width: 400px;
-    text-align: center;
+    padding: 1rem;
+    margin: 1rem auto;
+    font-size: 1.2rem;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-.login-card h1 {
-    color: #ca5811;
-    /* Darker orange for text */
-    margin-bottom: 2rem;
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #d8cae0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+
+/* Login Form Styles */
 
 .login-form {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    gap: 1.2rem;
+    align-items: center;
+    gap: 0.1rem;
 }
 
-.login-input {
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    /* Rounded corners */
-    outline: none;
-    transition: border-color 0.3s ease;
+
+/* Utility Classes */
+
+.text-muted {
+    color: #6c757d;
 }
 
-.login-input:focus {
-    border-color: #6a1b9a;
-    /* Purple border on focus */
+.mt-2 {
+    margin-top: 1rem;
 }
 
-.login-button {
-    background-color: #6a1b9a;
-    /* Darker purple button */
-    color: white;
-    padding: 0.8rem;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 20px;
-    /* Rounded corners */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+
+/* Responsive Styles */
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    button,
+    .btn {
+        width: 100%;
+        min-width: auto;
+    }
 }
 
-.login-button:hover {
-    background-color: #4a148c;
-    /* Darker purple on hover */
-}
+
+/* SignUp Link Styles */
 
 .signup-message {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
 }
 
 .signup-link {
-    color: #6a1b9a;
+    color: #815a89;
+    font-weight: bold;
+    text-decoration: none;
     cursor: pointer;
-    text-decoration: underline;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .signup-link:hover {
-    color: #4a148c;
-}
-
-.archive-button {
-    background-color: #28a745;
-    /* Green color */
+    background-color: #815a89;
     color: white;
-    padding: 0.5rem 1.2rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
+    transform: scale(1.05);
 }
 
-.archive-button:hover {
-    background-color: #218838;
-    /* Darker green */
+.signup-link:active {
+    transform: scale(1);
+    background-color: #815a89;
 }
 
 
-/* Update the button layout to be vertical */
+/* Navbar Styles */
 
-.card button {
-    display: block;
-    margin: 10px auto;
-    width: 80%;
+.navbar {
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    box-shadow: var(--shadow-medium);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-
-/* If you want to target only the "Add to Favorites" and "Add to Green Collection" buttons specifically */
-
-.favorite-button,
-.green-button {
-    margin-top: 1rem;
-    /* You can adjust this to change spacing between buttons */
+.navbar-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.archive-buttonn {
-    background-color: #5998dc;
-    /* Green color */
-    color: white;
-    padding: 0.5rem 1.2rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.archive-buttonn:hover {
-    background-color: #23577a;
-}
-
-.generate-button {
-    background-color: #0288d1;
-    /* Blue color */
-    color: white;
-    padding: 0.8rem 2rem;
+.navbar-link {
+    text-decoration: none;
+    color: var(--white);
     font-size: 1.1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-.generate-button:hover {
-    background-color: #0277bd;
-    /* Darker blue on hover */
+.navbar-link:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-.home-page-button {
-    background-color: #4caf50;
-    /* Green color */
+
+/* Adjust Navbar Layout for Content */
+
+.container {
+    margin-top: 5rem;
+}
+
+
+/* Button Container for Navbar */
+
+.navbar-link {
+    background-color: #6c63ff;
     color: white;
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
+    padding: 10px 20px;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
 }
 
-.home-page-button:hover {
-    background-color: #45a049;
-    /* Darker green on hover */
+.navbar-link:hover {
+    background-color: #5a52e0;
+}
+
+
+/* Search Bar Styles */
+
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    padding: 0.8rem 1.2rem;
+    margin: 1rem auto;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #6a1b9a;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }

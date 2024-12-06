@@ -9,7 +9,6 @@ const Login = () => {
   const handleLogin = () => {
     navigate("/home");
   };
-
   return (
     <div className="login-container">
       <img src={logo} alt="Logo" className="app-logo" />
